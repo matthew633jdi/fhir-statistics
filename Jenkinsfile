@@ -34,28 +34,6 @@ pipeline {
             }
         }
 
-        stage('SonarQube analysis') {
-            steps {
-                sh './gradlew sonarqube'
-            }
-            post {
-                success {
-                    slackSend (
-                        channel: SLACK_CHANNEL,
-                        color: SLACK_SUCCESS_COLOR,
-                        message: 'SonarQube analysis에 성공했습니다.'
-                    )
-                }
-                failure {
-                    slackSend (
-                        channel: SLACK_CHANNEL,
-                        color: SLACK_FAIL_COLOR,
-                        message: 'SonarQube analysis에 실패했습니다.'
-                    )
-                }
-            }
-        }
-
         stage('Archive Artifacts') {
             steps {
                 archiveArtifacts artifacts: 'build/libs/*.jar'
