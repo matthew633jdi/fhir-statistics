@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        SLACK_CHANNEL = '#test',
-        SLACK_SUCCESS_COLOR = '#2C953C',
+        SLACK_CHANNEL = '#test'
+        SLACK_SUCCESS_COLOR = '#2C953C'
         SLACK_FAIL_COLOR = '#FF3232'
     }
     stages {
