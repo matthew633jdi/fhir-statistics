@@ -1,9 +1,9 @@
 pipeline {
     agent any
     environment {
-        SLACK_CHANNEL = "#test"
-        SLACK_SUCCESS_COLOR = "#2C953C";
-        SLACK_FAIL_COLOR = "#FF3232";
+        SLACK_CHANNEL = '#test',
+        SLACK_SUCCESS_COLOR = '#2C953C',
+        SLACK_FAIL_COLOR = '#FF3232'
     }
     stages {
         stage('Install Dependencies') {
@@ -21,7 +21,7 @@ pipeline {
                     slackSend {
                         channel: env.SLACK_CHANNEL,
                         color: env.SLACK_SUCCESS_COLOR,
-                        message: "Build Test에 성공했습니다."
+                        message: 'Build Test에 성공했습니다.'
                     }
                 }
             }
@@ -29,7 +29,7 @@ pipeline {
                 slackSend {
                     channel: env.SLACK_CHANNEL,
                     color: env.SLACK_FAIL_COLOR,
-                    message: "Build Test에 실패했습니다."
+                    message: 'Build Test에 실패했습니다.'
                 }
             }
         }
@@ -43,7 +43,7 @@ pipeline {
                     slackSend {
                         channel: env.SLACK_CHANNEL,
                         color: env.SLACK_SUCCESS_COLOR,
-                        message: "SonarQube analysis에 성공했습니다."
+                        message: 'SonarQube analysis에 성공했습니다.'
                     }
                 }
             }
@@ -51,7 +51,7 @@ pipeline {
                 slackSend {
                     channel: env.SLACK_CHANNEL,
                     color: env.SLACK_FAIL_COLOR,
-                    message: "SonarQube analysis에 실패했습니다."
+                    message: 'SonarQube analysis에 실패했습니다.'
                 }
             }
         }
@@ -65,7 +65,7 @@ pipeline {
                     slackSend {
                         channel: env.SLACK_CHANNEL,
                         color: env.SLACK_SUCCESS_COLOR,
-                        message: "Archive Artifacts에 성공했습니다."
+                        message: 'Archive Artifacts에 성공했습니다.'
                     }
                 }
             }
@@ -73,7 +73,7 @@ pipeline {
                 slackSend {
                     channel: env.SLACK_CHANNEL,
                     color: env.SLACK_FAIL_COLOR,
-                    message: "Archive Artifacts에 실패했습니다."
+                    message: 'Archive Artifacts에 실패했습니다.'
                 }
             }
         }
