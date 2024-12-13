@@ -18,19 +18,19 @@ pipeline {
             }
             post {
                 success {
-                    slackSend {
-                        channel: env.SLACK_CHANNEL,
-                        color: env.SLACK_SUCCESS_COLOR,
+                    slackSend (
+                        channel: SLACK_CHANNEL,
+                        color: SLACK_SUCCESS_COLOR,
                         message: 'Build Test에 성공했습니다.'
-                    }
+                    )
                 }
             }
             failure {
-                slackSend {
-                    channel: env.SLACK_CHANNEL,
-                    color: env.SLACK_FAIL_COLOR,
+                slackSend (
+                    channel: SLACK_CHANNEL,
+                    color: SLACK_FAIL_COLOR,
                     message: 'Build Test에 실패했습니다.'
-                }
+                )
             }
         }
 
@@ -40,19 +40,19 @@ pipeline {
             }
             post {
                 success {
-                    slackSend {
-                        channel: env.SLACK_CHANNEL,
-                        color: env.SLACK_SUCCESS_COLOR,
+                    slackSend (
+                        channel: SLACK_CHANNEL,
+                        color: SLACK_SUCCESS_COLOR,
                         message: 'SonarQube analysis에 성공했습니다.'
-                    }
+                    )
                 }
             }
             failure {
-                slackSend {
-                    channel: env.SLACK_CHANNEL,
-                    color: env.SLACK_FAIL_COLOR,
+                slackSend (
+                    channel: SLACK_CHANNEL,
+                    color: SLACK_FAIL_COLOR,
                     message: 'SonarQube analysis에 실패했습니다.'
-                }
+                )
             }
         }
 
@@ -62,19 +62,19 @@ pipeline {
             }
             post {
                 success {
-                    slackSend {
-                        channel: env.SLACK_CHANNEL,
-                        color: env.SLACK_SUCCESS_COLOR,
+                    slackSend (
+                        channel: SLACK_CHANNEL,
+                        color: SLACK_SUCCESS_COLOR,
                         message: 'Archive Artifacts에 성공했습니다.'
-                    }
+                    )
                 }
             }
             failure {
-                slackSend {
-                    channel: env.SLACK_CHANNEL,
-                    color: env.SLACK_FAIL_COLOR,
+                slackSend (
+                    channel: SLACK_CHANNEL,
+                    color: SLACK_FAIL_COLOR,
                     message: 'Archive Artifacts에 실패했습니다.'
-                }
+                )
             }
         }
     }
