@@ -3,6 +3,7 @@ package kr.irm.FHIRext.statistics.dto;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import kr.irm.FHIRext.statistics.entity.Metadata;
+import kr.irm.FHIRext.statistics.entity.Study;
 
 import java.time.LocalDate;
 import java.time.OffsetDateTime;
@@ -36,6 +37,6 @@ public record ResponseVO(
                 metadata.getPatientBirthdate().toLocalDate(),
                 metadata.getCreatedDttm(),
                 metadata.getUpdatedDttm(),
-                metadata.getStudyList().stream().map(x -> x.getStudyUid()).toList());
+                metadata.getStudyList().stream().map(Study::getStudyUid).toList());
     }
 }

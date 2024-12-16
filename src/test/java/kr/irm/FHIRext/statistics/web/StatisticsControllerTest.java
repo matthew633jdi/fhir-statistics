@@ -1,6 +1,5 @@
 package kr.irm.FHIRext.statistics.web;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.irm.FHIRext.statistics.dto.RequestVO;
 import kr.irm.FHIRext.statistics.dto.ResponseVO;
@@ -8,12 +7,9 @@ import kr.irm.FHIRext.statistics.entity.Metadata;
 import kr.irm.FHIRext.statistics.service.StatisticsService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.BDDMockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;

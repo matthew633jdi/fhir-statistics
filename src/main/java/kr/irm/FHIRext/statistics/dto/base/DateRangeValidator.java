@@ -35,21 +35,13 @@ public class DateRangeValidator implements ConstraintValidator<ValidDateRange, O
             LocalDate endValue = (LocalDate) endRangeField.get(value);
             LocalDate dateValue = (LocalDate) dateField.get(value);
 
-            if (dateValue != null) {
-                if (startValue != null || endValue != null) {
-                    return false;
-                }
-            }
-
-            if (startValue != null || endValue != null) {
-                if (dateValue != null) {
-                    return false;
-                }
-            }
-
-            return true;
+            return dateValue == null || !hasDateRange(startValue, endValue);
         } catch (Exception e) {
             return false;
         }
+    }
+
+    private boolean hasDateRange(LocalDate startDate, LocalDate endDate) {
+        return startDate != null || endDate != null;
     }
 }

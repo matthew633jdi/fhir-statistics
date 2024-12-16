@@ -1,12 +1,10 @@
 package kr.irm.FHIRext.statistics.repository;
 
 import com.querydsl.core.types.OrderSpecifier;
-import com.querydsl.core.types.Predicate;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import kr.irm.FHIRext.statistics.dto.RequestVO;
 import kr.irm.FHIRext.statistics.entity.Metadata;
-import kr.irm.FHIRext.statistics.entity.QStudy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
